@@ -13,5 +13,5 @@ app.get('/person/:id',function(req, res){
 app.get('/api', function(req,res){
     res.json({firstname:"john",lastname:"doe"})
 });
-
+// start server
 app.listen(port);
