@@ -5,10 +5,11 @@ const mongoose = require('mongoose');
 const app = express();
 const MONGO_CONNECTION = process.env.MONGO_CONNECTION;
 
-app.get("/", function (req, res) {
-  
-  res.send("Running MVC Application, Student API Project.");
-});
+const studentRoute = require("./routes/studentRoute");
+app.use(express.json());
+
+//Student Route
+app.use("/api", studentRoute);
 
 mongoose
   .connect(MONGO_CONNECTION)
